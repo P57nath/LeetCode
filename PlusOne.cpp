@@ -23,27 +23,38 @@ typedef long long ll;
 
 vector<int> plusOne(vector<int>& digits)
 {
-    int x=0,y=0,i,value=0;
-
-    int n = digits.size();
-    for(i=0;i<n-1;i++)
+    string s = "0";
+    for (auto x : digits)
     {
-        x = ( x + digits[i] ) * 10;
+        char c = x + '0';
+        s += c;
     }
-    x = ( x + digits[n-1] ) + 1;
-
-    vector<int> res1;
-    while(x!=0)
+    int i = digits.size();
+    while (i > 0)
     {
-        value = x%10;
-        res1.push_back(value);
-        x/=10;
-    }
-    for(i=n-1;i<0;i--)
-    {
+        if (s[i] == '9')
+        {
+            char c = '0' + s[i] - '9';
+            s[i] = c;
+        }
+        else
+            break;
 
+        i--;
     }
-    return res1;
+
+    int x = (int)s[i] - '0';
+    char ch2 = '0' + x + 1;
+    s[i] = ch2;
+    vector<int> vec;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if(s[i] == '0' && i == 0)
+            continue;
+        vec.push_back(s[i] - '0');
+    }
+
+    return vec;
 
 
 }
@@ -52,11 +63,11 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vector<int> digits{1,2,3};
+    vector<int> digits{4,3,2,1};
     vector<int> res;
 
     res = plusOne(digits);
-    for(int i=0;i<res.size();i++)
+    for(int i=0; i<res.size(); i++)
     {
         cout<<"[ "<<res[i]<<" ]";
     }
