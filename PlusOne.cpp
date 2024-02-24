@@ -39,7 +39,10 @@ vector<int> plusOne(vector<int>& digits)
         res1.push_back(value);
         x/=10;
     }
-    sort(res1.begin(),res1.end());
+    for(i=n-1;i<0;i--)
+    {
+
+    }
     return res1;
 
 
