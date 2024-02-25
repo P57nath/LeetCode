@@ -25,7 +25,7 @@ void moveZeroes(vector<int>& nums)
 {
     int n = nums.size(),i,cnt=0;
 
-    for(i=0; i<n; i++)
+    ffi(0,n)
     {
         while(i<n)
         {
@@ -48,7 +48,7 @@ void moveZeroes(vector<int>& nums)
 
     int x = n-cnt;
 
-    for(i=x; i<n; i++)
+    ffi(x,n)
     {
         nums[i]=0;
     }
