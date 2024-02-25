@@ -47,7 +47,7 @@ vector<int> plusOne(vector<int>& digits)
     char ch2 = '0' + x + 1;
     s[i] = ch2;
     vector<int> vec;
-    for (int i = 0; i < s.size(); i++)
+    ffi(0,s.size())
     {
         if(s[i] == '0' && i == 0)
             continue;

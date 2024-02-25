@@ -24,7 +24,7 @@ typedef long long ll;
 int maxProfit(vector<int>& prices)
 {
     int min_price= INT_MAX,profit = 0,max_price=INT_MIN;
-    for(int i=0;i<prices.size();i++)
+    ffi(0,prices.size())
     {
         min_price = min(min_price,prices[i]);
         max_price = prices[i]-min_price;

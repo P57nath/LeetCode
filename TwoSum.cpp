@@ -24,9 +24,9 @@ typedef long long ll;
 vector<int> twoSum(vector<int>& nums, int target)
 {
     int n = nums.size();
-    for(int i=0;i<n;i++)
+    ffi(0,n)
     {
-        for(int j=i+1;j<n;j++)
+        ffj(i+1,n)
         {
             if(nums[i]+nums[j]==target)return {i,j};
         }
@@ -45,7 +45,7 @@ int main()
     vector<int> res;
 
     res = twoSum(nums,target);
-    for(int i=0;i<res.size();i++)
+    ffi(0,res.size())
     {
         cout<<"[ "<<res[i]<<" ]";
     }
