@@ -23,7 +23,7 @@ typedef long long ll;
 
 void moveZeroes(vector<int>& nums)
 {
-    int n = nums.size(),i,cnt=0;
+    /*int n = nums.size(),i,cnt=0;
 
     ffi(0,n)
     {
@@ -57,6 +57,23 @@ void moveZeroes(vector<int>& nums)
     {
         cout << element << " ";
     }
+    */
+    int j=0;
+    for(int i=0; i<nums.size(); i++)
+    {
+
+        if(nums[i]!=0)
+        {
+            swap(nums[i],nums[j]);
+            j++;
+
+        }
+    }
+    for (auto element : nums)
+    {
+        cout << element << " ";
+    }
+
 
 }
 int main()
@@ -64,7 +81,7 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vector<int> nums{1,2,3,0,4,0,0,5,6};
+    vector<int> nums{1,0,0,4,5,8,0,6,0,5};
 
     moveZeroes(nums);
 
