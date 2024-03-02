@@ -21,32 +21,50 @@ using namespace std;
 #define co(n)          cout<<n;
 typedef long long ll;
 
-vector<int> runningSum(vector<int>& nums)
+int pivotIndex(vector<int>& nums)
 {
-    int n= nums.size();
+    int n =nums.size();
 
-    ffi(1,n)
+    int sum = 0,leftsum = 0, rightSum = 0;
+
+
+    for (int &i : nums)
     {
-        nums[i] = nums[i] + nums[i-1];
+        sum += i;
     }
-    return nums;
-}
 
+    for (int i = 0; i < n; ++i)
+    {
+        rightSum = sum - leftsum - nums[i];
+
+        if(leftsum == rightSum)
+        {
+            return i ;
+        }
+
+        leftsum+=nums[i];
+    }
+
+    return -1;
+
+}
 
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vector<int> digits{1,2,3,4};
-    vector<int> res;
+    int n;cin>>n;
 
-    res = runningSum(digits);
-    for(int i=0; i<res.size(); i++)
+    vector<int> digits;
+    for (int i = 0; i < n; ++i)
     {
-        cout<<"[ "<<res[i]<<" ]";
+        int x;
+        cin>>x;
+        digits.push_back(x);
     }
 
+    cout<<pivotIndex(digits);
 }
 
 
